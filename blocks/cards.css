@@ -3,6 +3,13 @@
 }
 
 .card__list {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  list-style-type: none;
+}
+
+.card {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, 282px);
@@ -11,16 +18,9 @@
   margin: 0;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  list-style-type: none;
-}
-
 .card__image {
   width: 282px;
-  height: 282x;
+  height: 282px;
 }
 
 .card__description {
