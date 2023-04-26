@@ -6,7 +6,8 @@
 }
 
 .profile__image {
-  height: 127.5px;
+  height: 120px;
+  width: 120px;
   border-radius: 9999px;
   object-fit: cover;
   background-position: center;
@@ -87,6 +88,7 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    margin-left: 0;
   }
 
   .profile__image {
