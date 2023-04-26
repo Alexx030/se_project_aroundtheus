@@ -21,4 +21,4 @@ All the images used for the website is in the image folder.
 
 **GitHub**
 
-https://Alexx030.github.io/aroundtheus
+https://Alexx030.github.io/se_project_aroundtheus

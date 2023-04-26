@@ -7,7 +7,7 @@
 
 .profile__image {
   height: 127.5px;
-  border-radius: 50%;
+  border-radius: 9999px;
   object-fit: cover;
   background-position: center;
 }
@@ -79,6 +79,7 @@
 @media screen and (max-width: 480px) {
   .profile {
     flex-direction: column;
+    margin-bottom: 36px;
   }
 
   .profile__info {
