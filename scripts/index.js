@@ -53,7 +53,7 @@ function getCardElement(cardData) {
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__title");
   //set the path to the image to the link field of the object
-  cardImageEl.textContent = cardData.link;
+  cardImageEl.src = cardData.link;
   //set the image alt text to the name field of the object
   cardImageEl.alt = cardData.name;
   //set the card title to the name field of the object, too
