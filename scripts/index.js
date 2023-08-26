@@ -57,6 +57,11 @@ function closePopup() {
   profileEditModal.classList.remove("modal_opened");
 }
 
+function renderCard(cardData, wrapper) {
+  const cardElement = getCardElement(cardData);
+  wrapper.prepend(cardElement);
+}
+
 function getCardElement(cardData) {
   //clone the template element with all its content and store it in a cardElement variable
   const cardElement = cardTemplate.cloneNode(true);
@@ -82,9 +87,9 @@ function handleProfileEditSubmit(evt) {
 
 function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
-  const titleValue = cardTitleForm.value;
-  const linkValue = cardLinkForm.vaule;
-  const cardElement = getCardElement();
+  const name = cardTitleForm.value;
+  const link = cardLinkForm.vaule;
+  renderCard({ name, link }, cardListEl);
   closePopup(addCardModal);
 }
 
@@ -106,7 +111,4 @@ addCardCloseModal.addEventListener("click", () => {
   addCardModal.classList.remove("modal_opened");
 });
 
-initialCards.forEach((cardData) => {
-  const cardElement = getCardElement(cardData);
-  cardListEl.prepend(cardElement);
-});
+initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
