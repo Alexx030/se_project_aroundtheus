@@ -53,3 +53,10 @@
   transition: opacity 1s ease;
   cursor: pointer;
 }
+
+.card__delete-button {
+  background-image: transparent url(../images/Trash-Icon.svg) center no-repeat;
+  width: 18px;
+  height: 19.3px;
+  position: absolute;
+}
