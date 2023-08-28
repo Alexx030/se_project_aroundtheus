@@ -53,8 +53,8 @@ const cardTemplate =
 const cardTitleForm = addCardForm.querySelector("#add-card-title-form");
 const cardLinkForm = addCardForm.querySelector("#add-card-link-form");
 
-function closePopup() {
-  profileEditModal.classList.remove("modal_opened");
+function closePopup(modal) {
+  modal.classList.remove("modal_opened");
 }
 
 function renderCard(cardData, wrapper) {
@@ -68,6 +68,11 @@ function getCardElement(cardData) {
   //access the card title and image and store them in variables
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__title");
+  const likeButton = cardElement.querySelector(".card__like-button");
+
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__like-button_active");
+  });
   //set the path to the image to the link field of the object
   cardImageEl.src = cardData.link;
   //set the image alt text to the name field of the object
@@ -82,7 +87,7 @@ function handleProfileEditSubmit(evt) {
   evt.preventDefault();
   profileTitle.textContent = profileTitleForm.value;
   profileDescription.textContent = profileDescriptionForm.value;
-  closePopup();
+  closePopup(profileEditModal);
 }
 
 function handleAddCardFormSubmit(evt) {
