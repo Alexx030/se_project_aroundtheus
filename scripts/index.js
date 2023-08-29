@@ -53,6 +53,8 @@ const cardTemplate =
 const cardTitleForm = addCardForm.querySelector("#add-card-title-form");
 const cardLinkForm = addCardForm.querySelector("#add-card-link-form");
 
+const previewImageModal = document.querySelector(".preview-image-modal");
+
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
 }
@@ -77,6 +79,9 @@ function getCardElement(cardData) {
   });
   //add click listener to the cardImage element
   //openModal with previewImageModal
+  cardImageEl.addEventListener("click", () => {
+    previewImageModal.classList.add("modal_opened");
+  });
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
