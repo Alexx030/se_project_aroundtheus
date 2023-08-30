@@ -53,7 +53,10 @@ const cardTemplate =
 const cardTitleForm = addCardForm.querySelector("#add-card-title-form");
 const cardLinkForm = addCardForm.querySelector("#add-card-link-form");
 
-const previewImageModal = document.querySelector(".preview-image-modal");
+const previewImageModal = document.querySelector("#preview-image-modal");
+const previewImageCloseModal = document.querySelector(
+  "#preview-image-close-modal"
+);
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
@@ -80,7 +83,14 @@ function getCardElement(cardData) {
   //add click listener to the cardImage element
   //openModal with previewImageModal
   cardImageEl.addEventListener("click", () => {
+    cardImageEl.src = cardData.link;
+    cardImageEl.alt = cardData.name;
+    cardTitleEl.textContent = cardData.name;
     previewImageModal.classList.add("modal_opened");
+  });
+
+  previewImageCloseModal.addEventListener("click", () => {
+    previewImageModal.classList.remove("modal_opened");
   });
 
   likeButton.addEventListener("click", () => {
