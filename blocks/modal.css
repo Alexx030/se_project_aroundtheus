@@ -26,6 +26,14 @@
   display: grid;
 }
 
+.modal__image-container {
+  max-width: 75vw;
+  max-height: 75vh;
+  position: relative;
+  top: 250px;
+  left: 640px;
+}
+
 .modal__close {
   background-image: url(../images/Close\ Icon.svg);
   background-color: transparent;
@@ -40,7 +48,7 @@
   height: 40px;
 }
 
-.modal__close.hover {
+.modal__close:hover {
   opacity: 0.5;
   transition: opacity 1s ease;
 }
@@ -96,6 +104,7 @@
 }
 
 .modal__button:hover {
+  visibility: visible;
   opacity: 0.5;
   transition: opacity 1s ease;
   cursor: pointer;
@@ -120,6 +129,12 @@
   .modal__container {
     width: 282px;
     height: 322px;
+    padding: 0px 19px;
+  }
+
+  .modal__image-container {
+    width: 240px;
+    height: 299px;
     padding: 0px 19px;
   }
 
