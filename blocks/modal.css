@@ -6,12 +6,17 @@
   bottom: 0;
   right: 0;
   z-index: 1;
-  display: none;
   padding: 0 19px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
 }
 
 .modal_opened {
   display: flex;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s;
 }
 
 .modal__container {
@@ -27,11 +32,9 @@
 }
 
 .modal__image-container {
-  max-width: 75vw;
-  max-height: 75vh;
-  position: relative;
-  top: 250px;
-  left: 640px;
+  background: transparent;
+  width: 433px;
+  height: 540px;
 }
 
 .modal__close {
@@ -40,12 +43,15 @@
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
-  border: none;
   position: absolute;
+  border: none;
   bottom: calc(100% + 5px);
   left: calc(100% + 5px);
   width: 40px;
   height: 40px;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.5s, opacity 0.5s;
 }
 
 .modal__close:hover {
@@ -129,12 +135,6 @@
   .modal__container {
     width: 282px;
     height: 322px;
-    padding: 0px 19px;
-  }
-
-  .modal__image-container {
-    width: 240px;
-    height: 299px;
     padding: 0px 19px;
   }
 
