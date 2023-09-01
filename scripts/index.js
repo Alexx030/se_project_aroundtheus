@@ -64,6 +64,10 @@ function closePopup(modal) {
   modal.classList.remove("modal_opened");
 }
 
+function openPopup(modal) {
+  modal.classList.add("modal_opened");
+}
+
 function renderCard(cardData, wrapper) {
   const cardElement = getCardElement(cardData);
   wrapper.prepend(cardElement);
@@ -86,15 +90,15 @@ function getCardElement(cardData) {
   //add click listener to the cardImage element
   //openModal with previewImageModal
   cardImageEl.addEventListener("click", () => {
-    previewImageModal.classList.add("modal_opened");
     previewImageEl.src = cardData.link;
     previewImageEl.alt = cardData.name;
     previewTitleEl.textContent = cardData.name;
+    openPopup(previewImageModal);
   });
 
-  previewImageCloseModal.addEventListener("click", () => {
-    previewImageModal.classList.remove("modal_opened");
-  });
+  previewImageCloseModal.addEventListener("click", () =>
+    closePopup(previewImageModal)
+  );
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
@@ -127,7 +131,7 @@ function handleAddCardFormSubmit(evt) {
 profileEditButton.addEventListener("click", () => {
   profileTitleForm.value = profileTitle.textContent;
   profileDescriptionForm.value = profileDescription.textContent;
-  profileEditModal.classList.add("modal_opened");
+  openPopup(profileEditModal);
 });
 
 profileCloseModal.addEventListener("click", () => closePopup(profileEditModal));
@@ -135,11 +139,7 @@ profileCloseModal.addEventListener("click", () => closePopup(profileEditModal));
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 addCardForm.addEventListener("submit", handleAddCardFormSubmit);
 
-addNewCardButton.addEventListener("click", () => {
-  addCardModal.classList.add("modal_opened");
-});
-addCardCloseModal.addEventListener("click", () => {
-  addCardModal.classList.remove("modal_opened");
-});
+addNewCardButton.addEventListener("click", () => openPopup(addCardModal));
+addCardCloseModal.addEventListener("click", () => closePopup(addCardModal));
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
