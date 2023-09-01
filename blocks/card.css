@@ -28,12 +28,13 @@
 .card__title {
   font-family: "Inter", Arial, sans-serif;
   font-weight: 900;
-  font-size: 19px;
+  font-size: 25px;
   line-height: 29px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   margin: 0;
+  max-width: 190px;
 }
 
 .card__like-button {
