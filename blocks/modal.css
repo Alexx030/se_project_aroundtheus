@@ -138,14 +138,14 @@
     padding: 0px 19px;
   }
 
-  .modal__profile-edit {
+  .modal_profile-edit {
     width: 282px;
     height: 322px;
     top: 123px;
     left: 22px;
   }
 
-  .modal__add-card {
+  .modal_add-card {
     width: 282px;
     height: 322px;
     top: 123px;
