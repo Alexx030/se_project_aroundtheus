@@ -69,7 +69,7 @@
   height: 23px;
 }
 
-.modal__form-item {
+.modal__input_form_item {
   border-bottom-color: #000;
   border-bottom-width: 1px;
   border-top: none;
@@ -80,11 +80,11 @@
   margin-bottom: 29.74px;
 }
 
-.modal__form-item:last-of-type {
+.modal__input_form_item:last-of-type {
   margin-bottom: 0px;
 }
 
-.modal__form-item-title {
+.modal__input_form_item_title {
   border-bottom-color: #000;
   border-bottom-width: 1px;
   border-top: none;
@@ -95,7 +95,7 @@
   margin-bottom: 29.74px;
 }
 
-.modal__form-item-title:last-of-type {
+.modal__input_form_item_title:last-of-type {
   margin-bottom: 0px;
 }
 
@@ -167,7 +167,7 @@
     width: 238px;
   }
 
-  .modal__form-item {
+  .modal__input_form_item {
     width: 238px;
   }
 
