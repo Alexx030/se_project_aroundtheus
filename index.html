@@ -58,14 +58,22 @@
             type="text"
             name="title"
             placeholder="Jacques Cousteau"
+            minlength="2"
+            maxlength="40"
+            required
           />
+          <span class="modal__error" id="profile-title-form-error"></span>
           <input
             class="modal__input modal__input_form_item"
             id="profile-description-form"
             type="text"
             name="description"
             placeholder="Explorer"
+            minlength="2"
+            maxlength="200"
+            required
           />
+          <span class="modal__error" id="profile-description-form-error"></span>
           <button class="modal__button">Save</button>
         </form>
       </div>
@@ -82,6 +90,9 @@
             type="text"
             name="title"
             placeholder="Title"
+            minlength="1"
+            maxlength="30"
+            required
           />
           <input
             class="modal__input modal__input_form_item"
@@ -89,6 +100,7 @@
             type="text"
             name="link"
             placeholder="Image Link"
+            required
           />
           <button class="modal__button">Create</button>
         </form>

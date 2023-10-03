@@ -131,6 +131,14 @@
   height: 12px;
 }
 
+.modal__error {
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.52px;
+  color: #ff0000;
+}
+
 @media screen and (max-width: 630px) {
   .modal__container {
     width: 282px;
