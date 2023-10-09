@@ -145,15 +145,3 @@ addNewCardButton.addEventListener("click", () => openPopup(addCardModal));
 addCardCloseModal.addEventListener("click", () => closePopup(addCardModal));
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
-
-modal.addEventListener("click", (evt) => {
-  if (evt.target.classList.contains("modal")) {
-    closePopup(profileEditModal, addCardModal);
-  }
-});
-
-$(modal).keydown(function (evt) {
-  if (evt.key === Escape) {
-    $(".modal").hide();
-  }
-});

@@ -55,6 +55,18 @@ function enableValidation(options) {
   });
 }
 
+modal.addEventListener("click", (evt) => {
+  if (evt.target.classList.contains("modal")) {
+    closePopup(profileEditModal, addCardModal);
+  }
+});
+
+$(modal).keydown(function (evt) {
+  if (evt.key === Escape) {
+    $(".modal").hide();
+  }
+});
+
 const config = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
