@@ -103,6 +103,7 @@ function getCardElement(cardData) {
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
   });
+
   //set the path to the image to the link field of the object
   cardImageEl.src = cardData.link;
   //set the image alt text to the name field of the object
@@ -144,3 +145,15 @@ addNewCardButton.addEventListener("click", () => openPopup(addCardModal));
 addCardCloseModal.addEventListener("click", () => closePopup(addCardModal));
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
+
+modal.addEventListener("click", (evt) => {
+  if (evt.target.classList.contains("modal")) {
+    closePopup(profileEditModal, addCardModal);
+  }
+});
+
+$(modal).keydown(function (evt) {
+  if (evt.key === Escape) {
+    $(".modal").hide();
+  }
+});
