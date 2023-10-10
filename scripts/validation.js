@@ -55,10 +55,13 @@ function enableValidation(options) {
   });
 }
 
-modal.addEventListener("click", (evt) => {
-  if (evt.target.classList.contains("modal")) {
-    closePopup(profileEditModal, addCardModal);
-  }
+const modals = document.querySelector(".modal__form");
+modals.forEach((modal) => {
+  modal.addEventListener("click", (evt) => {
+    if (evt.target.classList.contains("modal")) {
+      closePopup(formSelector);
+    }
+  });
 });
 
 $(modal).keydown(function (evt) {
