@@ -62,10 +62,12 @@ const previewTitleEl = previewImageModal.querySelector(".preview-image-title");
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
+  modal.addEventListener("keydown", () => closePopup(modal));
 }
 
 function openPopup(modal) {
   modal.classList.add("modal_opened");
+  modal.addEventListener("keydown", () => openPopup(modal));
 }
 
 function renderCard(cardData, wrapper) {
@@ -145,3 +147,19 @@ addNewCardButton.addEventListener("click", () => openPopup(addCardModal));
 addCardCloseModal.addEventListener("click", () => closePopup(addCardModal));
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
+
+const modals = document.querySelectorAll(".modal");
+
+modals.forEach((modal) => {
+  modal.addEventListener("click", (evt) => {
+    if (evt.target.classList.contains("modal")) {
+      closePopup(modal);
+    }
+  });
+});
+
+modal.addEventListener("keydown", function (evt) {
+  if (evt.key === Escape) {
+    closePopup(modal);
+  }
+});
