@@ -67,7 +67,11 @@ function closePopup(modal) {
 
 function openPopup(modal) {
   modal.classList.add("modal_opened");
-  modal.addEventListener("keydown", () => openPopup(modal));
+  document.addEventListener("keydown", (evt) => {
+    if (evt.key === "Escape") {
+      closePopup(modal);
+    }
+  });
 }
 
 function renderCard(cardData, wrapper) {
@@ -156,10 +160,4 @@ modals.forEach((modal) => {
       closePopup(modal);
     }
   });
-});
-
-modal.addEventListener("keydown", function (evt) {
-  if (evt.key === Escape) {
-    closePopup(modal);
-  }
 });
