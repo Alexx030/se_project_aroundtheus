@@ -62,7 +62,6 @@ const previewTitleEl = previewImageModal.querySelector(".preview-image-title");
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
-  modal.addEventListener("keydown", () => closePopup(modal));
 }
 
 function openPopup(modal) {
