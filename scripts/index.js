@@ -60,17 +60,21 @@ const previewImageCloseModal = document.querySelector(
 const previewImageEl = previewImageModal.querySelector(".preview-image-card");
 const previewTitleEl = previewImageModal.querySelector(".preview-image-title");
 
+function handleEsc(evt) {
+  const modal = document.querySelector(".modal_opened");
+  if (evt.key === "Escape") {
+    closePopup(modal);
+  }
+}
+
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEsc);
 }
 
 function openPopup(modal) {
   modal.classList.add("modal_opened");
-  document.addEventListener("keydown", (evt) => {
-    if (evt.key === "Escape") {
-      closePopup(modal);
-    }
-  });
+  document.addEventListener("keydown", handleEsc);
 }
 
 function renderCard(cardData, wrapper) {
