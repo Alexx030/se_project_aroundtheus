@@ -105,10 +105,6 @@ function getCardElement(cardData) {
     openPopup(previewImageModal);
   });
 
-  previewImageCloseModal.addEventListener("click", () =>
-    closePopup(previewImageModal)
-  );
-
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
   });
@@ -154,6 +150,10 @@ addNewCardButton.addEventListener("click", () => openPopup(addCardModal));
 addCardCloseModal.addEventListener("click", () => closePopup(addCardModal));
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
+
+previewImageCloseModal.addEventListener("click", () =>
+  closePopup(previewImageModal)
+);
 
 const modals = document.querySelectorAll(".modal");
 
