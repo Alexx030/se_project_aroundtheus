@@ -1,8 +1,9 @@
 export default class Card {
-  constructor({ name, link }, cardSelector) {
+  constructor({ name, link }, cardSelector, cardImageEl) {
     this._name = name;
     this._link = link;
     this._cardSelector = cardSelector;
+    this._cardImageEl = cardImageEl;
   }
 
   _setEventListeners() {
@@ -18,6 +19,12 @@ export default class Card {
       .addEventListener("click", () => {
         this._deleteButton();
       });
+    //".card__image"
+    this._cardElement
+      .querySelector(".card__image")
+      .addEventListener("click", () => {
+        this._cardImageEl();
+      });
   }
 
   _likeButton() {
@@ -31,6 +38,10 @@ export default class Card {
     this._cardElement = null;
   }
 
+  _cardImageEl() {
+    this._cardElement.querySelector(".card__image");
+  }
+
   getView() {
     this._cardElement = document
       .querySelector(this._cardSelector)
@@ -40,5 +51,6 @@ export default class Card {
     // set event listeners
     this._setEventListeners();
     // return the card
+    return this._cardElement;
   }
 }
