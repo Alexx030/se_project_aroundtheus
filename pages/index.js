@@ -37,7 +37,7 @@ const card = new Card(cardData, "#card-template");
 card.getView();
 
 // Validation
-const addFormEl = addCardForm.querySelector(".modal__form");
+const addFormEl = addCardModal.querySelector(".modal__form");
 const editFormEl = profileEditModal.querySelector(".modal__form");
 
 const addFormValidator = new FormValidator(config, addFormEl);
