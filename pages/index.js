@@ -1,4 +1,5 @@
 import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
 
 const initialCards = [
   {
@@ -34,6 +35,13 @@ const cardData = {
 
 const card = new Card(cardData, "#card-template");
 card.getView();
+
+// Validation
+const addFormEl = addCardForm.querySelector(".modal__form");
+const editFormEl = profileEditModal.querySelector(".modal__form");
+
+const addFormValidator = new FormValidator(config, addFormEl);
+addFormValidator.enableValidation();
 
 console.log(initialCards);
 
