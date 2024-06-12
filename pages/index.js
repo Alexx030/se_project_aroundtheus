@@ -33,17 +33,20 @@ const cardData = {
   link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
 };
 
+console.log(initialCards);
+
 const card = new Card(cardData, "#card-template");
 card.getView();
 
 // Validation
-const addFormEl = addCardModal.querySelector(".modal__form");
-const editFormEl = profileEditModal.querySelector(".modal__form");
+const editFormEl = profileEditModal.querySelector("#profile-edit-modal");
+const addFormEl = addCardModal.querySelector("#add-card-modal");
 
 const addFormValidator = new FormValidator(config, addFormEl);
 addFormValidator.enableValidation();
 
-console.log(initialCards);
+const editFormValidator = new FormValidator(config, editFormEl);
+editFormValidator.enableValidation();
 
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
