@@ -1,9 +1,9 @@
 export default class Card {
-  constructor({ name, link }, cardSelector, cardImageEl) {
+  constructor({ name, link }, cardSelector, handleImageClick) {
     this._name = name;
     this._link = link;
     this._cardSelector = cardSelector;
-    this._cardImageEl = cardImageEl;
+    this._handleImageClick = handleImageClick;
   }
 
   _setEventListeners() {
@@ -11,34 +11,34 @@ export default class Card {
     this._cardElement
       .querySelector(".card__like-button")
       .addEventListener("click", () => {
-        this._likeButton();
+        this._toggleLike();
       });
     //".card__delete-button"
     this._cardElement
       .querySelector(".card__delete-button")
       .addEventListener("click", () => {
-        this._deleteButton();
+        this._deleteCard();
       });
     //".card__image"
     this._cardElement
       .querySelector(".card__image")
       .addEventListener("click", () => {
-        this._cardImageEl();
+        this._handleImageClick();
       });
   }
 
-  _likeButton() {
+  _toggleLike() {
     this._cardElement
       .querySelector(".card__like-button")
       .classList.toggle("card__like-button_active");
   }
 
-  _deleteButton() {
+  _deleteCard() {
     this._cardElement.remove();
     this._cardElement = null;
   }
 
-  _cardImageEl() {
+  _handleImageClick() {
     this._cardElement.querySelector(".card__image");
   }
 
