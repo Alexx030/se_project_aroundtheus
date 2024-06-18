@@ -38,9 +38,7 @@ export default class Card {
     this._cardElement = null;
   }
 
-  _handleImageClick() {
-    this._cardElement.querySelector(".card__image");
-  }
+  _handleImageClick() {}
 
   getView() {
     this._cardElement = document
@@ -48,6 +46,7 @@ export default class Card {
       .content.querySelector(".card")
       .cloneNode(true);
     // get the card view
+    this._cardElement.querySelector(".card__image");
     // set event listeners
     this._setEventListeners();
     // return the card
