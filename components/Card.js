@@ -47,6 +47,7 @@ export default class Card {
       .cloneNode(true);
     // get the card view
     this._cardElement.querySelector(".card__image");
+    this._cardElement.querySelector(".card__title");
     // set event listeners
     this._setEventListeners();
     // return the card
