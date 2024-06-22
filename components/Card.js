@@ -38,7 +38,10 @@ export default class Card {
     this._cardElement = null;
   }
 
-  _handleImageClick() {}
+  _handleImageClick() {
+    this._previewImageModal.querySelector(".preview-image-card");
+    this._previewImageModal.querySelector(".preview-image-title");
+  }
 
   getView() {
     this._cardElement = document

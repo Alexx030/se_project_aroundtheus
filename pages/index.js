@@ -141,6 +141,7 @@ function handleAddCardFormSubmit(evt) {
   renderCard({ name, link }, cardListEl);
   addCardForm.reset();
   closePopup(addCardModal);
+  addFormValidator.toggleButtonState();
 }
 
 profileEditButton.addEventListener("click", () => {
