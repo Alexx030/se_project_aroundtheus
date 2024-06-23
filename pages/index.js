@@ -86,8 +86,8 @@ function openPopup(modal) {
 }
 
 function renderCard(cardData, wrapper) {
-  const cardElement = getCardElement(cardData);
-  wrapper.prepend(cardElement);
+  const card = new Card(cardData, "#card-template");
+  wrapper.prepend(card.getView());
 }
 
 function getCardElement(cardData) {
