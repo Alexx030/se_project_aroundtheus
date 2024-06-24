@@ -34,7 +34,7 @@ class FormValidator {
     return !inputList.every((inputEl) => inputEl.validity.valid);
   }
 
-  _toggleButtonState(inputEls, submitButton) {
+  toggleButtonState(inputEls, submitButton) {
     if (this._hasInvalidInput(inputEls)) {
       this._submitButton.classList.add(this._inactiveButtonClass);
       return (this._submitButton.disabled = true);

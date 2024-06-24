@@ -92,7 +92,7 @@ function renderCard(cardData, wrapper) {
 
 function getCardElement(cardData) {
   const card = new Card(cardData, "#card-template");
-  card.getView();
+  return card.getView();
   //clone the template element with all its content and store it in a cardElement variable
   const cardElement = cardTemplate.cloneNode(true);
   //access the card title and image and store them in variables

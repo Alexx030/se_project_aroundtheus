@@ -39,8 +39,10 @@ export default class Card {
   }
 
   _handleImageClick() {
-    this._previewImageModal.querySelector(".preview-image-card");
-    this._previewImageModal.querySelector(".preview-image-title");
+    this._previewImageModal.querySelector(".preview-image-card").src =
+      this._link;
+    this._previewImageModal.querySelector(".preview-image-title").textContent =
+      this._name;
   }
 
   getView() {
@@ -49,8 +51,8 @@ export default class Card {
       .content.querySelector(".card")
       .cloneNode(true);
     // get the card view
-    this._cardElement.querySelector(".card__image");
-    this._cardElement.querySelector(".card__title");
+    this._cardElement.querySelector(".card__image").src = this._link;
+    this._cardElement.querySelector(".card__title").textContent = this._name;
     // set event listeners
     this._setEventListeners();
     // return the card
