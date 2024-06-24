@@ -86,11 +86,13 @@ function openPopup(modal) {
 }
 
 function renderCard(cardData, wrapper) {
-  const card = new Card(cardData, "#card-template");
-  wrapper.prepend(card.getView());
+  const cardElement = getCardElement(cardData);
+  wrapper.prepend(cardElement);
 }
 
 function getCardElement(cardData) {
+  const card = new Card(cardData, "#card-template");
+  card.getView();
   //clone the template element with all its content and store it in a cardElement variable
   const cardElement = cardTemplate.cloneNode(true);
   //access the card title and image and store them in variables
