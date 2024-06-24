@@ -93,40 +93,6 @@ function renderCard(cardData, wrapper) {
 function getCardElement(cardData) {
   const card = new Card(cardData, "#card-template");
   return card.getView();
-  //clone the template element with all its content and store it in a cardElement variable
-  const cardElement = cardTemplate.cloneNode(true);
-  //access the card title and image and store them in variables
-  const cardImageEl = cardElement.querySelector(".card__image");
-  const cardTitleEl = cardElement.querySelector(".card__title");
-  const likeButton = cardElement.querySelector(".card__like-button");
-
-  //find delete button
-  const deleteButton = cardElement.querySelector(".card__delete-button");
-
-  deleteButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
-  //add click listener to the cardImage element
-  //openModal with previewImageModal
-  cardImageEl.addEventListener("click", () => {
-    previewImageEl.src = cardData.link;
-    previewImageEl.alt = cardData.name;
-    previewTitleEl.textContent = cardData.name;
-    openPopup(previewImageModal);
-  });
-
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
-
-  //set the path to the image to the link field of the object
-  cardImageEl.src = cardData.link;
-  //set the image alt text to the name field of the object
-  cardImageEl.alt = cardData.name;
-  //set the card title to the name field of the object, too
-  cardTitleEl.textContent = cardData.name;
-  //return the ready HTML element with the filled-in data
-  return cardElement;
 }
 
 function handleProfileEditSubmit(evt) {
