@@ -90,7 +90,7 @@ function renderCard(cardData, wrapper) {
   wrapper.prepend(cardElement);
 }
 
-function getCardElement(cardData) {
+function getCardElement(cardData, handleClickImage) {
   const card = new Card(cardData, "#card-template");
   return card.getView();
 }

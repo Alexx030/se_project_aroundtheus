@@ -6,7 +6,7 @@ class FormValidator {
     this._inactiveButtonClass = config.inactiveButtonClass;
     this._inputErrorClass = config.inputErrorClass;
     this._errorClass = config.errorClass;
-    this._formEl = config.formEl;
+    this._formEl = formEl;
   }
 
   _showInputError(inputEl) {
@@ -56,7 +56,7 @@ class FormValidator {
   }
 
   enableValidation() {
-    this._formEls = [...document.querySelectorAll(this._formSelector)];
+    this._formEl = [...document.querySelectorAll(this._formSelector)];
     this._formEl.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });

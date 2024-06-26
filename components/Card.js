@@ -41,7 +41,7 @@ export default class Card {
   _handleImageClick() {
     this._previewImageModal.querySelector(".preview-image-card").src =
       this._link;
-    this._previewImageModal.querySelector(".preview-image-title").alt =
+    this._previewImageModal.querySelector(".preview-image-card").alt =
       this._name;
     this._previewImageModal.querySelector(".preview-image-title").textContent =
       this._name;
@@ -54,7 +54,7 @@ export default class Card {
       .cloneNode(true);
     // get the card view
     this._cardElement.querySelector(".card__image").src = this._link;
-    this._cardElement.querySelector(".card__title").alt = this._name;
+    this._cardElement.querySelector(".card__image").alt = this._name;
     this._cardElement.querySelector(".card__title").textContent = this._name;
     // set event listeners
     this._setEventListeners();
