@@ -90,9 +90,16 @@ function renderCard(cardData, wrapper) {
   wrapper.prepend(cardElement);
 }
 
-function getCardElement(cardData, handleClickImage) {
-  const card = new Card(cardData, "#card-template");
+function getCardElement(cardData) {
+  const card = new Card(cardData, "#card-template", handleClickImage);
   return card.getView();
+}
+
+function handleClickImage(name, link) {
+  previewImageEl.src = cardData.link;
+  previewImageEl.alt = cardData.name;
+  previewTitleEl.textContent = cardData.name;
+  openPopup(previewImageModal);
 }
 
 function handleProfileEditSubmit(evt) {
@@ -152,8 +159,8 @@ const config = {
 };
 
 // Validation
-const editFormEl = profileEditModal.querySelector("#profile-edit-modal");
-const addFormEl = addCardModal.querySelector("#add-card-modal");
+const editFormEl = profileEditModal.querySelector(".modal__form");
+const addFormEl = addCardModal.querySelector(".modal__form");
 
 const addFormValidator = new FormValidator(config, addFormEl);
 addFormValidator.enableValidation();

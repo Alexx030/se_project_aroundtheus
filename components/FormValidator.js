@@ -56,7 +56,6 @@ class FormValidator {
   }
 
   enableValidation() {
-    this._formEl = [...document.querySelectorAll(this._formSelector)];
     this._formEl.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
