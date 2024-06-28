@@ -1,6 +1,5 @@
 class FormValidator {
   constructor(config, formEl) {
-    this._formSelector = config.formSelector;
     this._inputSelector = config.inputSelector;
     this._submitButtonSelector = config.ubmitButtonSelector;
     this._inactiveButtonClass = config.inactiveButtonClass;
@@ -44,9 +43,8 @@ class FormValidator {
   }
 
   _setEventListeners() {
-    const { inputSelector, submitButtonSelector } = options;
-    this._inputEls = [...formEl.querySelectorAll(this._inputSelector)];
-    this._submitButton = formEl.querySelector(this._submitButtonSelector);
+    this._inputEls = [...this._formEl.querySelectorAll(this._inputSelector)];
+    this._submitButton = this._formEl.querySelector(this._submitButtonSelector);
     this._inputEls.forEach((inputEl) => {
       this._inputEl.addEventListener("input", (evt) => {
         this._checkInputValidity(inputEl);
@@ -60,7 +58,7 @@ class FormValidator {
       evt.preventDefault();
     });
 
-    this._setEventListeners(formEl);
+    this._setEventListeners();
   }
 }
 
